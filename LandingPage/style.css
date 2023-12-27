@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(37, 37, 37);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.leftSection{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.rightSection{
+    width: 50%;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(to top, #f2d434, #ebdc90);
+}
+
+#jordan{
+    width: 70%;
+    height: auto;
+    animation-name: SlideIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes SlideIn {
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+#shadow-jordan{
+    width: 70%;
+}
+
+/* Navbar */
+
+nav{
+    width: 100%;
+}
+
+.navList{
+    list-style: none;
+    /* position: absolute; */
+    color: white;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item{
+    width: 80px;
+    text-align: center;
+    margin: 10px;
+    padding: 8px;
+    border-radius: 12px;
+}
+
+#log-out{
+    margin: 15px;
+    border: 2px solid #eed75b;
+}
+.item:hover{
+    background-color: #eed75b;
+    color: black;
+    cursor: pointer;
+}
+
+.WelcomeSection{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    width: 80%;
+    height: 80vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#WelcomePara{
+    width: 80%;
+    font-weight: 100;
+}
+
+.WelcomeSection *{
+    margin: 10px;
+}
+
+.buttonSection{
+    display: flex;
+}
+
+.btn{
+    width: 100px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding: 12px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 8px;
+}
+
+.btn:hover{
+    cursor: pointer;
+    color: black;
+    background-color: #eed75b;
+    border: 0;
+}
+
+@media (max-width:730px) {
+    .rightSection{
+        display: none;
+    }
+    .leftSection{
+        width: 100%;
+    }
+}

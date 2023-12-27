@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | SneakerHood</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script type="module" src="index.js"></script>
+</head>
+
+<body>
+    <div id="msgbox">
+        <h3>Error</h3>
+        <!-- <hr color="white" width="100%"> -->
+        <p id="errorText">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    </div>
+    <div class="container">
+        <div class="detailsDiv">
+            <span id="user-details"></span>
+            <button id="logout">Log Out</button>
+        </div>
+        <div class="control">
+            <button class="control-btn">
+                Sign In
+            </button>
+            <button class="control-btn">
+                Sign Up
+            </button>
+        </div>
+        <form id="signin-form" class="form">
+            <h2>Sign in</h2>
+            <div class="inputData">
+                <!-- <label for="email">Email</label> -->
+                <input type="email" id="signin-email" name="email" placeholder="Email" autocomplete="off">
+            </div>
+            <div class="inputData">
+                <!-- <label for="password">Password</label> -->
+                <input type="password" id="signin-password" name="password" placeholder="Password">
+            </div>
+            <button type="submit" id="signinbutton">Log in</button>
+        </form>
+
+        <form id="signup-form" class="form">
+            <h2>Sign Up</h2>
+            <p>You need to verify email for your account to be created</p>
+            <div class="inputData">
+                <input type="text" id="Username" placeholder="Username" autocomplete="off">
+            </div>
+            <div class="inputData">
+                <!-- <label for="email">Email</label> -->
+                <input type="email" id="email" name="email" placeholder="Email" autocomplete="off">
+                <!-- <button id="verifyButton">Verify</button> -->
+                <i class="fa fa-check" id="checkIcon" aria-hidden="true"></i>
+            </div>
+            <div class="inputData">
+                <!-- <label for="password">Password</label> -->
+                <input type="password" id="password" name="password" placeholder="Password">
+            </div>
+            <div id="recaptcha-container"></div>
+            <button type="submit" id="signupbutton">Sign Up</button>
+        </form>
+    </div>
+    <div id="modal">
+        <div class="main">
+            <div class="loading">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <h3>Email Verification</h3>
+            <p>Please verify your email address using link sent on provided email</p>
+            <div class="btnsec">
+                <button>Resend Link</button>
+                <button id="cancel-verification">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const controlButtons = Array.from(document.getElementsByClassName('control-btn'))
+        const signInForm = document.getElementById('signin-form');
+        const signUpForm = document.getElementById('signup-form');
+        signInForm.style.display = 'flex';
+        controlButtons[0].classList.add('active');
+        controlButtons[0].addEventListener("click", () => {
+            controlButtons[1].classList.remove('active');
+            controlButtons[0].classList.add('active');
+            signUpForm.style.display = 'none';
+            signInForm.style.display = 'flex';
+        })
+        controlButtons[1].addEventListener("click", () => {
+            controlButtons[0].classList.remove('active');
+            controlButtons[1].classList.add('active');
+            signInForm.style.display = 'none';
+            signUpForm.style.display = 'flex';
+        })
+    </script>
+
+</body>
+
+</html>
